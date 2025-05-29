@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unidad 3</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand">
+                    <i class="bi bi-cpu me-2"></i>Arquitectura de Computadoras
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="bi bi-list-ul me-1"></i>Temario
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad1.html">
+                                <i class="bi bi-1-circle me-1"></i>Unidad 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad2.html">
+                                <i class="bi bi-2-circle me-1"></i>Unidad 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad3.html">
+                                <i class="bi bi-3-circle me-1"></i>Unidad 3
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad4.html">
+                                <i class="bi bi-4-circle me-1"></i>Unidad 4
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+
+        <header class="container">
+            <div>
+                <h2>Unidad 3</h2>
+                <br>
+                <h3>Selección de componentes para ensamble de equipo de cómputo</h3>
+
+                <p class="texto-puntos">La selección adecuada de componentes es crucial para construir un sistema de cómputo eficiente y funcional. Esta unidad cubre los principales elementos que conforman un equipo de cómputo moderno.</p>
+
+                <div class="section">
+                    <h2>3.1 Chip set</h2>
+                    <p>El chipset es el conjunto de circuitos integrados que gestiona el flujo de datos entre el procesador, la memoria y los periféricos:</p>
+                    
+                    <h3>3.1.1 Unidad central de procesamiento (CPU)</h3>
+                    <ul>
+                        <li><strong>Cerebro del computador:</strong> Ejecuta instrucciones y procesa datos.</li>
+                        <li><strong>Características clave:</strong> Número de núcleos, frecuencia de reloj, caché, arquitectura.</li>
+                        <li><strong>Fabricantes principales:</strong> Intel (Core i3/i5/i7/i9), AMD (Ryzen 3/5/7/9).</li>
+                    </ul>
+                    
+                    <h3>3.1.2 Controlador del Bus</h3>
+                    <ul>
+                        <li><strong>Función:</strong> Gestiona la comunicación entre la CPU y otros componentes.</li>
+                        <li><strong>Tipos de buses:</strong> Bus de datos, bus de direcciones, bus de control.</li>
+                        <li><strong>Velocidad:</strong> Determina el ancho de banda disponible para transferencias.</li>
+                    </ul>
+                    
+                    <h3>3.1.3 Puertas de entrada/salida (I/O)</h3>
+                    <ul>
+                        <li><strong>Interfaces comunes:</strong> USB, Thunderbolt, HDMI, Ethernet, audio.</li>
+                        <li><strong>Controladores:</strong> Gestionan la comunicación con dispositivos externos.</li>
+                        <li><strong>Estándares:</strong> USB 2.0/3.0/3.1/4, Thunderbolt 3/4.</li>
+                    </ul>
+                    
+                    <h3>3.1.4 Controlador de interrupciones</h3>
+                    <ul>
+                        <li><strong>Función:</strong> Maneja las señales de interrupción de dispositivos periféricos.</li>
+                        <li><strong>Prioridades:</strong> Asigna niveles de prioridad a diferentes interrupciones.</li>
+                        <li><strong>APIC:</strong> Controlador avanzado de interrupciones en sistemas modernos.</li>
+                    </ul>
+                    
+                    <h3>3.1.5 Controlador de acceso directo a memoria (DMA)</h3>
+                    <ul>
+                        <li><strong>Propósito:</strong> Permite a dispositivos acceder a memoria sin involucrar a la CPU.</li>
+                        <li><strong>Ventajas:</strong> Reduce carga de la CPU, mejora el rendimiento.</li>
+                        <li><strong>Canales DMA:</strong> Rutas dedicadas para transferencias.</li>
+                    </ul>
+                    
+                    <h3>3.1.6 Circuitos de temporización</h3>
+                    <ul>
+                        <li><strong>Reloj del sistema:</strong> Sincroniza operaciones en la computadora.</li>
+                        <li><strong>Oscilador de cristal:</strong> Genera la señal de reloj base.</li>
+                        <li><strong>PLL:</strong> Circuitos de bloqueo de fase para generar múltiples frecuencias.</li>
+                    </ul>
+                    
+                    <h3>3.1.7 Circuitos de control</h3>
+                    <ul>
+                        <li><strong>Funciones:</strong> Generación de señales de control, gestión de energía.</li>
+                        <li><strong>Componentes:</strong> Decodificadores, multiplexores, flip-flops.</li>
+                        <li><strong>Administración térmica:</strong> Control de ventiladores y throttling.</li>
+                    </ul>
+                    
+                    <h3>3.1.8 Controladores de video</h3>
+                    <ul>
+                        <li><strong>GPU integrada:</strong> Procesamiento gráfico en el chipset o CPU.</li>
+                        <li><strong>GPU discreta:</strong> Tarjetas gráficas dedicadas (NVIDIA, AMD).</li>
+                        <li><strong>Interfaces:</strong> PCIe para tarjetas gráficas, salidas de video.</li>
+                    </ul>
+                </div>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/Chip set.png" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+                <br>
+                <div class="section">
+                    <h2>3.2 Aplicaciones</h2>
+                    <p>Componentes fundamentales para el funcionamiento del sistema:</p>
+                    
+                    <h3>3.2.1 Entrada/salida</h3>
+                    <ul>
+                        <li><strong>Dispositivos de entrada:</strong> Teclado, mouse, escáner, micrófono.</li>
+                        <li><strong>Dispositivos de salida:</strong> Monitor, impresora, altavoces.</li>
+                        <li><strong>Interfaces:</strong> USB, Bluetooth, Wi-Fi, Thunderbolt.</li>
+                    </ul>
+                    
+                    <h3>3.2.2 Almacenamiento</h3>
+                    <ul>
+                        <li><strong>Tipos:</strong> HDD (discos duros), SSD (estado sólido), NVMe.</li>
+                        <li><strong>Interfaces:</strong> SATA, M.2, PCIe para SSD.</li>
+                        <li><strong>Capacidad vs. velocidad:</strong> Equilibrio según necesidades.</li>
+                    </ul>
+                    
+                    <h3>3.2.3 Fuentes de alimentación</h3>
+                    <ul>
+                        <li><strong>Potencia:</strong> Medida en vatios (W), según componentes.</li>
+                        <li><strong>Eficiencia:</strong> Certificaciones 80 Plus (Bronze, Silver, Gold, Platinum).</li>
+                        <li><strong>Conectores:</strong> ATX 24-pin, EPS 8-pin, PCIe 6+2-pin.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>3.3 Ambientes de Servicio</h2>
+                    <p>Diferentes contextos donde se implementan sistemas de cómputo:</p>
+                    
+                    <h3>3.3.1 Negocios</h3>
+                    <ul>
+                        <li><strong>Requisitos:</strong> Fiabilidad, seguridad, soporte para software empresarial.</li>
+                        <li><strong>Componentes típicos:</strong> Estaciones de trabajo, servidores, almacenamiento NAS/SAN.</li>
+                        <li><strong>Consideraciones:</strong> Escalabilidad, redundancia, copias de seguridad.</li>
+                    </ul>
+                    
+                    <h3>3.3.2 Industria</h3>
+                    <ul>
+                        <li><strong>Entornos difíciles:</strong> Resistencia a polvo, vibraciones, temperaturas extremas.</li>
+                        <li><strong>Computación industrial:</strong> PLC, sistemas embebidos, IoT.</li>
+                        <li><strong>Protocolos:</strong> Modbus, Profibus, EtherCAT.</li>
+                    </ul>
+                    
+                    <h3>3.3.3 Comercio Electrónico</h3>
+                    <ul>
+                        <li><strong>Infraestructura:</strong> Servidores web, bases de datos, balanceadores de carga.</li>
+                        <li><strong>Seguridad:</strong> SSL/TLS, firewalls, sistemas de pago seguros.</li>
+                        <li><strong>Escalabilidad:</strong> Soluciones cloud, autoescalado.</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <hr class="barra">
+
+        <article>
+            <div>
+                <h2>Practicas</h2><br>
+                <h2>Diseño de equipos de Computo de Gama Alta, Media y baja con presupuesto</h2><br>
+                <center>
+                    <a href="Archivos/Diseño de Equipos - Aldrin Esau Ortiz Rodriguez.pdf" type="button" target="_blank" class="btn btn-outline-primary" download>Descargar PDF</a>
+                </center>
+            </div>
+        </article>
+
+        <hr class="barra">
+
+        <footer class="color-fondo">
+            <div class="container">
+                <div class="primer-texto">Arquitectura de computadoras</div>
+                <div class="segundo-texto">Creado por Aldrin Esau Ortiz Rodirguez</div>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+                <div class="mt-3">
+                    <small>&copy; 2025 Todos los derechos reservados</small>
+                </div>
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
+</html>

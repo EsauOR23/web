@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temario</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand">
+                    <i class="bi bi-cpu me-2"></i>Arquitectura de Computadoras
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="bi bi-list-ul me-1"></i>Temario
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad1.html">
+                                <i class="bi bi-1-circle me-1"></i>Unidad 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad2.html">
+                                <i class="bi bi-2-circle me-1"></i>Unidad 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad3.html">
+                                <i class="bi bi-3-circle me-1"></i>Unidad 3
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad4.html">
+                                <i class="bi bi-4-circle me-1"></i>Unidad 4
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="container-fluid px-0">
+                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Imagenes/C1.webp" class="d-block w-100" alt="Componentes de computadora">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Componentes principales</h5>
+                                <p>Los elementos fundamentales de un sistema computacional</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Imagenes/C2.webp" class="d-block w-100" alt="Procesador">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Unidad Central de Procesamiento</h5>
+                                <p>El cerebro de la computadora que ejecuta instrucciones</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Imagenes/C3.webp" class="d-block w-100" alt="Arquitectura de computadoras">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Arquitectura moderna</h5>
+                                <p>Diseño y organización de sistemas computacionales</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+
+            <hr class="barra">
+
+            <article class="container">
+                <h2>Arquitectura de Computadoras</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <p class="info-materia">
+                            La <strong>Arquitectura de Computadoras</strong> es una disciplina fundamental que estudia el diseño, organización y funcionamiento interno de los componentes esenciales de una computadora, así como su interacción para procesar información de manera eficiente.
+                            
+                            <br><br>Esta materia aborda los elementos clave de un sistema computacional:
+                            
+                            <ul class="info-materia">
+                                <li><strong>CPU</strong> - Unidad Central de Procesamiento, encargada de ejecutar instrucciones</li>
+                                <li><strong>Memoria RAM</strong> - Almacena datos y programas en ejecución</li>
+                                <li><strong>Dispositivos de almacenamiento</strong> - Discos duros y SSDs que guardan información permanentemente</li>
+                                <li><strong>Tarjeta madre</strong> - Placa base que interconecta todos los componentes</li>
+                                <li><strong>Periféricos</strong> - Dispositivos de entrada y salida para la comunicación con el usuario</li>
+                            </ul>
+                            
+                            <br>Un aspecto clave es la <strong>jerarquía de memoria</strong>, que va desde los registros y caché (los más rápidos pero de menor capacidad) hasta la RAM y el almacenamiento secundario (más lentos pero con mayor espacio). Se estudia cómo la CPU gestiona las instrucciones mediante ciclos de <em>fetch, decode, execute</em> y <em>store</em>, así como técnicas de optimización como el <em>pipeline</em> y las diferencias entre arquitecturas <strong>CISC</strong> y <strong>RISC</strong>.
+                            
+                            <br><br>Además, se exploran conceptos avanzados como:
+                            
+                            <ul class="info-materia">
+                                <li>Paralelismo en procesadores multinúcleo</li>
+                                <li>Uso de GPUs para computación acelerada</li>
+                                <li>Manejo eficiente de sistemas de entrada/salida</li>
+                            </ul>
+                            
+                            El objetivo principal es comprender cómo se integran estos componentes para lograr un rendimiento óptimo, sentando las bases para el diseño y la mejora de sistemas computacionales modernos.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="barra">
+
+            <section class="container">
+                <h2>Temario</h2>
+                <div class="temario-alienacion">
+                    <div class="accordion" id="temarioAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unidad1" aria-expanded="false" aria-controls="unidad1">
+                                    <h3>U1. Arquitectura de Computadoras</h3>
+                                </button>
+                            </h3>
+                            <div id="unidad1" class="accordion-collapse collapse" data-bs-parent="#temarioAccordion">
+                                <div class="accordion-body">
+                                    <ol>
+                                            <li class="main-item">1. Modelos de arquitecturas de computo
+                                                <ol>
+                                                    <li class="sub-item">1.1 Clásicas</li>
+                                                    <li class="sub-item">1.2 Segmentas</li>
+                                                    <li class="sub-item">1.3 De multiprocesamiento</li>
+                                                </ol>
+                                            </li>
+                                            
+                                            <li class="main-item">1.2 Análisis de los componentes
+                                                <ol>
+                                                    <li class="sub-item">2.1 Arquitecturas
+                                                        <ol>
+                                                            <li class="sub-sub-item">1.2.1.1 Unidad central de procesamiento</li>
+                                                            <li class="sub-sub-item">1.2.1.2 Unidad Aritmética lógica</li>
+                                                            <li class="sub-sub-item">1.2.1.3 Registros</li>
+                                                            <li class="sub-sub-item">1.2.1.4 Buses</li>
+                                                        </ol>
+                                                    </li>
+                                                    
+                                                    <li class="sub-item">1.2.2 Memoria
+                                                        <ol>
+                                                            <li class="sub-sub-item">1.2.2.1 Conceptos básicos del manejo de memoria</li>
+                                                            <li class="sub-sub-item">1.2.2.2 Memoria principal</li>
+                                                            <li class="sub-sub-item">1.2.2.3 Memoria Cache</li>
+                                                        </ol>
+                                                    </li>
+                                                    
+                                                    <li class="sub-item">1.2.3 Manejo de la entrada/salida
+                                                        <ol>
+                                                            <li class="sub-sub-item">1.2.3.1 Módulos de entrada/salida</li>
+                                                            <li class="sub-sub-item">1.2.3.2 Entrada/salida programada</li>
+                                                            <li class="sub-sub-item">1.2.3.3 Entrada/salida mediante interrupciones</li>
+                                                            <li class="sub-sub-item">1.2.3.4 Acceso directo a memoria</li>
+                                                            <li class="sub-sub-item">1.2.3.5 Canales y procesadores de entrada/salida</li>
+                                                        </ol>
+                                                    </li>
+                                                    
+                                                    <li class="sub-item">1.2.4 Buses
+                                                        <ol>
+                                                            <li class="sub-sub-item">1.2.4.1 Tipo de buses</li>
+                                                            <li class="sub-sub-item">1.2.4.2 Estructura de los buses</li>
+                                                            <li class="sub-sub-item">1.2.4.3 Jerarquía de los buses</li>
+                                                        </ol>
+                                                    </li>
+                                                    
+                                                    <li class="sub-item">1.2.5 Interrupciones</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unidad2" aria-expanded="false" aria-controls="unidad2">
+                                    <h3>U2. Estructura y funcionamiento de la unidad central de procesamiento</h3>
+                                </button>
+                            </h3>
+                            <div id="unidad2" class="accordion-collapse collapse" data-bs-parent="#temarioAccordion">
+                                <div class="accordion-body">
+                                    <ol>
+                                            <li class="main-item">2.1 Organización del procesador</li>
+                                            
+                                            <li class="main-item">2.2 Estructura de registros
+                                                <ol>
+                                                    <li class="sub-item">2.2.1 Registros visibles para el usuario</li>
+                                                    <li class="sub-item">2.2.2 Registros de control y de estados</li>
+                                                    <li class="sub-item">2.2.3 Ejemplos de registros de CPU reales</li>
+                                                </ol>
+                                            </li>
+                                            
+                                            <li class="main-item">2.3 El ciclo de instrucción
+                                                <ol>
+                                                    <li class="sub-item">2.3.1 Ciclo Fetch - Decode - Execute</li>
+                                                    <li class="sub-item">2.3.2 Segmentación de instrucciones</li>
+                                                    <li class="sub-item">2.3.3 Conjunto de instrucciones</li>
+                                                    <li class="sub-item">2.3.4 Modos de direccionamiento</li>
+                                                </ol>
+                                            </li>
+                                            
+                                            <li class="main-item">2.4 Casos de estudio de CPU reales</li>
+                                        </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unidad3" aria-expanded="false" aria-controls="unidad3">
+                                    <h3>U3. Selección de componentes para ensamble de equipo de cómputo</h3>
+                                </button>
+                            </h3>
+                            <div id="unidad3" class="accordion-collapse collapse" data-bs-parent="#temarioAccordion">
+                                <div class="accordion-body">
+                                    <ol>
+                                            <li class="main-item">3.1 Chipset
+                                                <ol>
+                                                    <li class="sub-item">3.1.1 Unidad central de procesamiento (CPU)</li>
+                                                    <li class="sub-item">3.1.2 Controlador del bus</li>
+                                                    <li class="sub-item">3.1.3 Puertas de entrada/salida (E/S)</li>
+                                                    <li class="sub-item">3.1.4 Controlador de interrupciones</li>
+                                                    <li class="sub-item">3.1.5 Controlador de acceso directo a memoria (DMA)</li>
+                                                    <li class="sub-item">3.1.6 Circuitos de temporización</li>
+                                                    <li class="sub-item">3.1.7 Circuitos de control</li>
+                                                    <li class="sub-item">3.1.8 Controladores de video</li>
+                                                </ol>
+                                            </li>
+                                            
+                                            <li class="main-item">3.2 Aplicaciones
+                                                <ol>
+                                                    <li class="sub-item">3.2.1 Entrada/salida</li>
+                                                    <li class="sub-item">3.2.2 Almacenamiento</li>
+                                                    <li class="sub-item">3.2.3 Fuentes de alimentación</li>
+                                                </ol>
+                                            </li>
+                                            
+                                            <li class="main-item">3.3 Ambientes de Servicio
+                                                <ol>
+                                                    <li class="sub-item">3.3.1 Negocios</li>
+                                                    <li class="sub-item">3.3.2 Industria</li>
+                                                    <li class="sub-item">3.3.3 Comercio Electrónico</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unidad4" aria-expanded="false" aria-controls="unidad4">
+                                    <h3>U4. Aspectos Básicos de la Computación Paralela</h3>
+                                </button>
+                            </h3>
+                            <div id="unidad4" class="accordion-collapse collapse" data-bs-parent="#temarioAccordion">
+                                <div class="accordion-body">
+                                    <ol>
+                                        <li class="main-item">4.1 Tipos de Computación Paralela
+                                            <ol>
+                                                <li class="sub-item">4.1.1 Clasificación</li>
+                                                <li class="sub-item">4.1.2 Arquitectura de Computadoras Secuenciales</li>
+                                                <li class="sub-item">4.1.3 Organización de Direcciones de Memoria</li>
+                                            </ol>
+                                        </li>
+                                        
+                                        <li class="main-item">4.2 Sistemas de Memoria Compartida
+                                            <ol>
+                                                <li class="sub-item">4.2.1 Redes de Interconexión Dinámicas ó Indirectas
+                                                    <ol>
+                                                        <li class="sub-sub-item">4.2.1.1 Redes de Medio Compartido</li>
+                                                        <li class="sub-sub-item">4.2.1.2 Redes Commutadas</li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        
+                                        <li class="main-item">4.3 Sistemas de Memoria Distribuida: Multiprocesadores
+                                            <ol>
+                                                <li class="sub-item">4.3.1 Redes de Interconexión Estáticas</li>
+                                            </ol>
+                                        </li>
+                                        
+                                        <li class="main-item">4.4 Casos de Estudio</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <hr class="barra">
+        
+        <aside>
+            <div class="container">
+                <h2>Ubicación del Instituto Tecnológico de Saltillo</h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mapa">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12797.62060773303!2d-100.99075841860358!3d25.443304562723434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86886d59eb5bc4d3%3A0x60771ba46d37358c!2sTecnol%C3%B3gico%20Nacional%20de%20M%C3%A9xico%20Campus%20Saltillo!5e1!3m2!1ses-419!2smx!4v1747339282703!5m2!1ses-419!2smx" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <hr class="barra">
+
+        <footer class="color-fondo">
+            <div class="container">
+                <div class="primer-texto">Arquitectura de computadoras</div>
+                <div class="segundo-texto">Creado por Aldrin Esau Ortiz Rodirguez</div>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+                <div class="mt-3">
+                    <small>&copy; 2025 Todos los derechos reservados</small>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
+</html>

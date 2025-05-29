@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unidad 4</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand">
+                    <i class="bi bi-cpu me-2"></i>Arquitectura de Computadoras
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <i class="bi bi-list-ul me-1"></i>Temario
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad1.html">
+                                <i class="bi bi-1-circle me-1"></i>Unidad 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad2.html">
+                                <i class="bi bi-2-circle me-1"></i>Unidad 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad3.html">
+                                <i class="bi bi-3-circle me-1"></i>Unidad 3
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="unidad4.html">
+                                <i class="bi bi-4-circle me-1"></i>Unidad 4
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="container">
+            <div>
+                <h2>Unidad 4</h2>
+                <br>
+                <h3>Aspectos Básicos de la Computación Paralela</h3>
+
+                <p class="texto-puntos">La computación paralela es un paradigma de computación donde múltiples operaciones se ejecutan simultáneamente, permitiendo resolver problemas complejos más rápido que con computación secuencial tradicional.</p>
+
+                <div class="section">
+                    <h2>4.1 Tipos de Computación Paralela</h2>
+                    <p>La computación paralela se puede clasificar según diferentes criterios:</p>
+                    
+                    <h3>4.1.1 Clasificación</h3>
+                    <ul>
+                        <li><strong>Por granularidad:</strong> Fina (operaciones), media (subrutinas), gruesa (procesos)</li>
+                        <li><strong>Por flujo de instrucciones/datos:</strong> SISD, SIMD, MISD, MIMD (Taxonomía de Flynn)</li>
+                        <li><strong>Por acoplamiento:</strong> Sistemas estrechamente acoplados (memoria compartida) vs. sistemas débilmente acoplados (memoria distribuida)</li>
+                    </ul>
+                    
+                    <h3>4.1.2 Arquitectura de Computadoras Secuenciales</h3>
+                    <p>Bases de la computación tradicional (no paralela):</p>
+                    <ul>
+                        <li>Modelo de von Neumann: procesador secuencial con flujo lineal de ejecución</li>
+                        <li>Limitaciones: Cuello de botella de von Neumann, dependencia de instrucciones</li>
+                        <li>Ley de Amdahl: límite teórico de aceleración al paralelizar un programa</li>
+                    </ul>
+                    
+                    <h3>4.1.3 Organización de Direcciones de Memoria</h3>
+                    <p>Modelos de acceso a memoria en sistemas paralelos:</p>
+                    <ul>
+                        <li><strong>UMA (Uniform Memory Access):</strong> Todos los procesadores acceden a memoria con igual latencia</li>
+                        <li><strong>NUMA (Non-Uniform Memory Access):</strong> Tiempo de acceso varía según ubicación de memoria</li>
+                        <li><strong>COMA (Cache Only Memory Access):</strong> Memoria distribuida como caché</li>
+                        <li><strong>NORMA (No Remote Memory Access):</strong> Cada procesador tiene su memoria local exclusiva</li>
+                    </ul>
+                </div>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/Tipos de computacion paralela.jpg" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+
+                <br>
+                <div class="section">
+                    <h2>4.2 Sistemas de Memoria Compartida</h2>
+                    <p>Arquitecturas donde múltiples procesadores comparten un espacio de direcciones único:</p>
+                    
+                    <h3>4.2.1 Redes de Interconexión Dinámicas ó Indirectas</h3>
+                    <p>Mecanismos para conectar procesadores con memoria en sistemas compartidos:</p>
+                    
+                    <h4>4.2.1.1 Redes de Medio Compartido</h4>
+                    <ul>
+                        <li>Bus común: simple pero con limitaciones de ancho de banda</li>
+                        <li>Arbitraje necesario para resolver conflictos de acceso</li>
+                        <li>Ejemplos: SMP (Symmetric Multi-Processing) con bus PCIe</li>
+                    </ul>
+                    
+                    <h4>4.2.1.2 Redes Commutadas</h4>
+                    <ul>
+                        <li><strong>Crossbar:</strong> Conexión completa pero costosa (N×M interruptores)</li>
+                        <li><strong>Multietapa:</strong> Compromiso entre complejidad y rendimiento (Omega, Butterfly)</li>
+                        <li>Ventajas: Mayor escalabilidad que bus compartido</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <p>Desafíos en memoria compartida:</p>
+                        <ul>
+                            <li>Coherencia de caché (protocolos MESI, MOESI)</li>
+                            <li>Contención en puntos calientes (hot spots)</li>
+                            <li>Sincronización (cerrojos, semáforos, barreras)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>4.3 Sistemas de Memoria Distribuida: Multiprocesadores</h2>
+                    <p>Arquitecturas donde cada procesador tiene su memoria local y se comunican mediante paso de mensajes:</p>
+                    
+                    <h3>4.3.1 Redes de Interconexión Estáticas</h3>
+                    <p>Topologías físicas fijas para conectar nodos:</p>
+                    <ul>
+                        <li><strong>Malla/Mesh:</strong> Conexiones regulares en 2D/3D (ej. Intel Teraflops)</li>
+                        <li><strong>Hipercubo:</strong> Log(n) diámetro pero complejo para muchos nodos</li>
+                        <li><strong>Anillo:</strong> Simple pero alta latencia</li>
+                        <li><strong>Estrella:</strong> Centralizado con punto único de fallo</li>
+                        <li><strong>Árbol:</strong> Jerárquico pero puede tener cuellos de botella en raíz</li>
+                    </ul>
+                    
+                    <div>
+                        <p>Ventajas de memoria distribuida:</p>
+                        <ul>
+                            <li>Mayor escalabilidad que memoria compartida</li>
+                            <li>No requiere hardware complejo para coherencia</li>
+                            <li>Cada nodo puede tener configuración independiente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/Sistema de Memoria distribuida.jpg" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+                
+                <br>
+                <div class="section">
+                    <h2>4.4 Casos de Estudio</h2>
+                    <p>Ejemplos reales de arquitecturas paralelas:</p>
+                    <ul>
+                        <li><strong>GPU Computing:</strong> Arquitecturas SIMD masivas (NVIDIA CUDA, AMD ROCm)</li>
+                        <li><strong>Supercomputadoras:</strong> IBM Blue Gene (memoria distribuida), Cray XT (híbrido)</li>
+                        <li><strong>Procesadores multinúcleo:</strong> Intel Xeon Phi, AMD Epyc (NUMA)</li>
+                        <li><strong>Clusters:</strong> Beowulf, Google Borg (commodity hardware)</li>
+                    </ul>
+                    <div class="highlight">
+                        <p>Tendencias actuales:</p>
+                        <ul>
+                            <li>Arquitecturas heterogéneas (CPU+GPU+FPGA)</li>
+                            <li>Computación en memoria (Processing-in-Memory)</li>
+                            <li>Arquitecturas many-core (cientos de núcleos por chip)</li>
+                            <li>Modelos de programación híbridos (OpenMP + MPI)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <hr class="barra">
+
+        <article>
+            <div>
+                <h2>Cotizacion de los Equipos de Computo Gama Alta, Media y Baja de las marcas Intel y AMD</h2><br>
+                <center>
+                    <a href="Archivos/Cotización de equipos - Aldrin Esau Ortiz Rodriguez.pdf" type="button" target="_blank" class="btn btn-outline-primary" download>Descargar PDF</a>
+                </center>
+            </div>
+        </article>
+
+        <footer class="color-fondo">
+            <div class="container">
+                <div class="primer-texto">Arquitectura de computadoras</div>
+                <div class="segundo-texto">Creado por Aldrin Esau Ortiz Rodirguez</div>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+                <div class="mt-3">
+                    <small>&copy; 2025 Todos los derechos reservados</small>
+                </div>
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
+</html>

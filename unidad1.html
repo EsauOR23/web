@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Unidad 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand">
+                <i class="bi bi-cpu me-2"></i>Arquitectura de Computadoras
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            <i class="bi bi-list-ul me-1"></i>Temario
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad1.html">
+                            <i class="bi bi-1-circle me-1"></i>Unidad 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad2.html">
+                            <i class="bi bi-2-circle me-1"></i>Unidad 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad3.html">
+                            <i class="bi bi-3-circle me-1"></i>Unidad 3
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad4.html">
+                            <i class="bi bi-4-circle me-1"></i>Unidad 4
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <main>
+        <div>
+            <h2>Unidad 1</h2><br>
+            <h3>Estructura y funcionamiento de la unidad central de procesamiento</h3><br>
+        </div>
+
+        <header class="container">
+            <div>        
+                <div>
+                    <h2>1.1 Arquitecturas Clásicas</h2>
+                    <p>Las arquitecturas clásicas representan los diseños fundamentales que han servido como base para los computadores modernos.</p>
+                    
+                    <div>
+                        <h4>Arquitectura de von Neumann</h4>
+                        <p>Propuesta en 1945 por John von Neumann, es la base de casi todos los computadores modernos:</p>
+                        <ul>
+                            <li><span class="highlight">Características principales:</span>
+                                <ul>
+                                    <li>Un único camino para datos e instrucciones ("cuello de botella de von Neumann")</li>
+                                    <li>Almacenamiento de programas en memoria (concepto revolucionario en su época)</li>
+                                    <li>Ejecución secuencial de instrucciones</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Componentes:</span>
+                                <ol>
+                                    <li>Unidad Central de Procesamiento (CPU)</li>
+                                    <li>Memoria principal</li>
+                                    <li>Dispositivos de Entrada/Salida</li>
+                                    <li>Buses de comunicación</li>
+                                </ol>
+                            </li>
+                            <li><span class="highlight">Limitaciones:</span>
+                                <ul>
+                                    <li>El rendimiento está limitado por el ancho de banda entre CPU y memoria</li>
+                                    <li>Las operaciones deben ejecutarse una tras otra</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <div class="diagram">
+                            <p><strong>Diagrama de von Neumann:</strong></p>
+                            <p>[CPU] ↔ [Memoria Principal] ↔ [Dispositivos E/S]</p>
+                            <p>Todas las comunicaciones a través de buses</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>Arquitectura Harvard</h4>
+                        <p>Variante que mejora el rendimiento separando caminos para datos e instrucciones:</p>
+                        <ul>
+                            <li>Memorias separadas para datos e instrucciones</li>
+                            <li>Mayor ancho de banda total</li>
+                            <li>Usada en muchos microcontroladores modernos (ej. ARM)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>1.2 Arquitecturas Segmentadas (Pipeline)</h2>
+                    <p>Mejora sobre el modelo clásico que permite mayor paralelismo en la ejecución de instrucciones.</p>
+                    
+                    <div>
+                        <h4>Concepto básico</h4>
+                        <p>Dividir la ejecución de instrucciones en etapas independientes:</p>
+                        <ol>
+                            <li><strong>Fetch</strong>: Obtener la instrucción de memoria</li>
+                            <li><strong>Decode</strong>: Decodificar la instrucción</li>
+                            <li><strong>Execute</strong>: Ejecutar la operación</li>
+                            <li><strong>Memory</strong>: Acceder a memoria si es necesario</li>
+                            <li><strong>Write-back</strong>: Escribir resultados en registros</li>
+                        </ol>
+                        
+                        <div class="note">
+                            <p>Nota: Mientras una instrucción está en la etapa "Execute", la siguiente puede estar en "Decode" y otra en "Fetch".</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><span class="highlight">Mayor throughput:</span> Más instrucciones completadas por unidad de tiempo</li>
+                            <li><span class="highlight">Mejor utilización de recursos:</span> Cada etapa puede estar activa simultáneamente</li>
+                            <li><span class="highlight">Mayor frecuencia de reloj:</span> Cada etapa es más simple y puede ejecutarse más rápido</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Desafíos (Hazards)</h4>
+                        <table>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                                <th>Solución</th>
+                            </tr>
+                            <tr>
+                                <td>Estructurales</td>
+                                <td>Recursos insuficientes para ejecutar instrucciones en paralelo</td>
+                                <td>Duplicar recursos, planificación</td>
+                            </tr>
+                            <tr>
+                                <td>De datos</td>
+                                <td>Una instrucción necesita el resultado de otra aún no completada</td>
+                                <td>Forwarding, stall (burbuja)</td>
+                            </tr>
+                            <tr>
+                                <td>De control</td>
+                                <td>Saltos condicionales que cambian el flujo del programa</td>
+                                <td>Predicción de saltos, ejecución especulativa</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div>
+                        <h4>Ejemplos prácticos</h4>
+                        <ul>
+                            <li>Procesadores MIPS clásicos: 5 etapas</li>
+                            <li>Procesadores modernos Intel Core/AMD Ryzen: 10-15 etapas</li>
+                            <li>Procesadores RISC-V: Implementaciones con 3-7 etapas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>1.3 Arquitecturas de Multiprocesamiento</h2>
+
+                    <div class="text-center my-4">
+                        <img src="Imagenes/Modelos Multi.jpg" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                    </div>
+
+                    <p>Sistemas que utilizan múltiples procesadores para mejorar el rendimiento.</p>
+
+                    <div>
+                        <h4>SMP (Symmetric Multi-Processing)</h4>
+                        <ul>
+                            <li>Varios procesadores comparten la misma memoria principal</li>
+                            <li>Todos los procesadores son iguales (simétricos)</li>
+                            <li>Comunicación a través de memoria compartida</li>
+                            <li>Desafío: Coherencia de caché (protocolos MESI, MOESI)</li>
+                            <li>Ejemplos: Servidores con múltiples CPUs, computadoras con múltiples núcleos</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>NUMA (Non-Uniform Memory Access)</h4>
+                        <ul>
+                            <li>Memoria físicamente distribuida pero lógicamente compartida</li>
+                            <li>Tiempo de acceso a memoria depende de su ubicación física</li>
+                            <li>Mayor escalabilidad que SMP</li>
+                            <li>Usado en sistemas con muchos procesadores (ej. servidores de 64+ CPUs)</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Clusters</h4>
+                        <ul>
+                            <li>Conjunto de computadoras independientes trabajando juntas</li>
+                            <li>Comunicación a través de red (no memoria compartida)</li>
+                            <li>Alta disponibilidad y escalabilidad</li>
+                            <li>Ejemplos: Supercomputadoras, granjas de servidores web</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Multinúcleo</h4>
+                        <ul>
+                            <li>Múltiples núcleos de procesamiento en un solo chip</li>
+                            <li>Comparten caché L3 y controlador de memoria</li>
+                            <li>Ventajas: Menor consumo, mayor ancho de banda</li>
+                            <li>Ejemplos: Procesadores modernos (Intel Core i7, AMD Ryzen)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div><br>
+
+            <!--Punto 2-->
+
+            <div class="section">
+                <h2>1.2. Análisis de los componentes</h2>
+                
+                <div>
+                    <h3>2.1 Arquitecturas</h3>
+                    <div>
+                        <h4>2.1.1 Unidad Central de Procesamiento (CPU)</h4>
+                        <p>Componente principal que ejecuta instrucciones de programas:</p>
+                        <ul>
+                            <li><span class="highlight">Unidad de Control:</span>
+                                <ul>
+                                    <li>Coordina todas las operaciones del procesador</li>
+                                    <li>Interpreta las instrucciones</li>
+                                    <li>Genera señales de control para otros componentes</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Unidad Aritmético-Lógica (ALU):</span>
+                                <ul>
+                                    <li>Realiza operaciones aritméticas (suma, resta, etc.)</li>
+                                    <li>Realiza operaciones lógicas (AND, OR, NOT, XOR)</li>
+                                    <li>Realiza operaciones de comparación</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Registros:</span>
+                                <ul>
+                                    <li>Pequeñas memorias ultrarrápidas dentro de la CPU</li>
+                                    <li>Almacenan datos temporalmente durante el procesamiento</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p>La velocidad de la CPU se mide en Hertz (ciclos por segundo). Los procesadores modernos operan en el rango de GHz (miles de millones de ciclos por segundo).</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-4">
+                        <img src="Imagenes/CPU.jpg" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                    </div>
+                    
+                    <div><br>
+                        <h3>2.1.2 Unidad Aritmética Lógica (ALU)</h3>
+                        <p>Componente que realiza las operaciones matemáticas y lógicas:</p>
+                        <ul>
+                            <li><span class="highlight">Operaciones aritméticas:</span>
+                                <ul>
+                                    <li>Suma y resta</li>
+                                    <li>Multiplicación y división (en ALUs avanzadas)</li>
+                                    <li>Operaciones con signo y complemento a 2</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Operaciones lógicas:</span>
+                                <ul>
+                                    <li>AND, OR, NOT, XOR, NAND, NOR, XNOR</li>
+                                    <li>Desplazamientos y rotaciones</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Banderas (flags):</span>
+                                <ul>
+                                    <li>Zero (Z): Resultado fue cero</li>
+                                    <li>Carry (C): Acarreo en operación</li>
+                                    <li>Overflow (V): Desbordamiento</li>
+                                    <li>Sign (N): Resultado negativo</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.1.3 Registros</h3>
+                        <p>Memorias pequeñas y rápidas dentro de la CPU:</p>
+                        
+                        <table>
+                            <tr>
+                                <th>Tipo de registro</th>
+                                <th>Función</th>
+                                <th>Ejemplos</th>
+                            </tr>
+                            <tr>
+                                <td>Propósito general</td>
+                                <td>Almacenamiento temporal de datos</td>
+                                <td>EAX, EBX, ECX, EDX (x86), R0-R31 (ARM)</td>
+                            </tr>
+                            <tr>
+                                <td>Propósito específico</td>
+                                <td>Funciones especializadas</td>
+                                <td>
+                                    <ul>
+                                        <li>PC (Contador de Programa)</li>
+                                        <li>IR (Registro de Instrucción)</li>
+                                        <li>SP (Puntero de Pila)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>De estado</td>
+                                <td>Almacenan estado del procesador</td>
+                                <td>FLAGS (x86), CPSR (ARM)</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="note">
+                            <p>Los registros son el nivel más alto en la jerarquía de memoria: más rápidos pero más caros y con menor capacidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>2.1.4 Buses</h3>
+                        <p>Sistemas de comunicación entre componentes del computador:</p>
+                        
+                        <table>
+                            <tr>
+                                <th>Tipo de bus</th>
+                                <th>Función</th>
+                                <th>Características</th>
+                            </tr>
+                            <tr>
+                                <td>Bus de datos</td>
+                                <td>Transporta información entre componentes</td>
+                                <td>Bidireccional, ancho determina cantidad de bits transferidos simultáneamente</td>
+                            </tr>
+                            <tr>
+                                <td>Bus de direcciones</td>
+                                <td>Especifica ubicaciones en memoria</td>
+                                <td>Unidireccional (CPU → otros), ancho determina espacio direccionable</td>
+                            </tr>
+                            <tr>
+                                <td>Bus de control</td>
+                                <td>Transporta señales de coordinación</td>
+                                <td>Señales como READ, WRITE, INTERRUPT, etc.</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="note">
+                            <p>Ejemplos de buses modernos: PCI Express (para tarjetas de expansión), USB (para dispositivos externos), DDR (para memoria RAM).</p>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/BUSES.jpg" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+
+                <div>
+                    <h2>2.2 Memoria</h2>
+                    
+                    <div>
+                        <h3>2.2.1 Conceptos básicos del manejo de memoria</h3>
+                        <p>Principios fundamentales sobre cómo se organiza y accede a la memoria:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Jerarquía de memoria:</span>
+                                <ol>
+                                    <li>Registros (más rápidos, más caros, menor capacidad)</li>
+                                    <li>Caché (L1, L2, L3)</li>
+                                    <li>Memoria principal (RAM)</li>
+                                    <li>Almacenamiento secundario (SSD, HDD)</li>
+                                </ol>
+                            </li>
+                            <li><span class="highlight">Principio de localidad:</span>
+                                <ul>
+                                    <li><strong>Localidad temporal:</strong> Datos accedidos recientemente probablemente se accederán de nuevo</li>
+                                    <li><strong>Localidad espacial:</strong> Datos cerca de los accedidos probablemente se accederán pronto</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Memoria virtual:</span> Técnica que permite usar disco como extensión de RAM</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.2.2 Memoria principal (RAM)</h3>
+                        <p>Memoria de acceso aleatorio donde se almacenan datos e instrucciones en ejecución:</p>
+                        
+                        <table>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                                <th>Características</th>
+                            </tr>
+                            <tr>
+                                <td>SRAM</td>
+                                <td>Static RAM</td>
+                                <td>Más rápida, más cara, no necesita refresco, usada en caché</td>
+                            </tr>
+                            <tr>
+                                <td>DRAM</td>
+                                <td>Dynamic RAM</td>
+                                <td>Más lenta, más barata, necesita refresco, usada como RAM principal</td>
+                            </tr>
+                            <tr>
+                                <td>SDRAM</td>
+                                <td>Synchronous DRAM</td>
+                                <td>Sincronizada con reloj del sistema, versiones: DDR, DDR2, DDR3, DDR4</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="note">
+                            <p>La RAM es volátil (pierde datos sin energía) y de acceso aleatorio (igual tiempo de acceso para cualquier ubicación).</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>2.2.3 Memoria Caché</h3>
+                        <p>Memoria pequeña y rápida que almacena copias de datos usados frecuentemente:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Niveles:</span>
+                                <ul>
+                                    <li><strong>L1:</strong> Dentro del núcleo, más rápida (1-4 ciclos), más pequeña (32-64KB)</li>
+                                    <li><strong>L2:</strong> Usualmente compartida por núcleos, intermedia (10-20 ciclos, 256KB-2MB)</li>
+                                    <li><strong>L3:</strong> Compartida por todos núcleos, más lenta (20-40 ciclos), más grande (4-32MB)</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Políticas de mapeo:</span>
+                                <ul>
+                                    <li><strong>Directo:</strong> Cada bloque de memoria va a una ubicación específica en caché</li>
+                                    <li><strong>Asociativo:</strong> Bloque puede ir a cualquier lugar en caché</li>
+                                    <li><strong>Asociativo por conjuntos:</strong> Compromiso entre los dos anteriores</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Políticas de reemplazo:</span>
+                                <ul>
+                                    <li>LRU (Least Recently Used)</li>
+                                    <li>FIFO (First In First Out)</li>
+                                    <li>Aleatorio</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><br>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/Memoria Cache.jpg" alt="..." class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+                
+                <div class="container">
+                    <h2>2.3 Manejo de la entrada/salida</h2><br>
+                    
+                    <div>
+                        <h3>2.3.1 Módulos de entrada/salida</h3>
+                        <p>Componentes que permiten la comunicación entre la CPU y los periféricos:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Funciones:</span>
+                                <ul>
+                                    <li>Control y temporización</li>
+                                    <li>Comunicación con la CPU</li>
+                                    <li>Comunicación con dispositivos</li>
+                                    <li>Almacenamiento temporal de datos</li>
+                                    <li>Detección de errores</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Tipos:</span>
+                                <ul>
+                                    <li>Controladores de disco</li>
+                                    <li>Interfaces de red</li>
+                                    <li>Controladores de video</li>
+                                    <li>Interfaces USB</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.3.2 Entrada/salida programada</h3>
+                        <p>La CPU controla directamente la transferencia de datos:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Características:</span>
+                                <ul>
+                                    <li>CPU ejecuta instrucciones para cada transferencia</li>
+                                    <li>Simple de implementar</li>
+                                    <li>Ineficiente (CPU ocupada en transferencias)</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Polling:</span>
+                                <ul>
+                                    <li>CPU verifica constantemente el estado del dispositivo</li>
+                                    <li>Consume muchos ciclos de CPU</li>
+                                    <li>Usado en sistemas simples</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.3.3 Entrada/salida mediante interrupciones</h3>
+                        <p>El dispositivo avisa al CPU cuando está listo para transferir datos:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Ventajas:</span>
+                                <ul>
+                                    <li>CPU puede hacer otras tareas mientras espera</li>
+                                    <li>Más eficiente que el polling</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Mecanismo:</span>
+                                <ol>
+                                    <li>CPU inicia operación de E/S</li>
+                                    <li>CPU continúa ejecutando otras instrucciones</li>
+                                    <li>Dispositivo genera interrupción cuando está listo</li>
+                                    <li>CPU suspende tarea actual y atiende la interrupción</li>
+                                    <li>CPU retoma tarea original</li>
+                                </ol>
+                            </li>
+                            <li><span class="highlight">Prioridades:</span> Algunas interrupciones son más urgentes que otras</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.3.4 Acceso directo a memoria (DMA)</h3>
+                        <p>Módulo especial que transfiere datos entre memoria y periféricos sin CPU:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Ventajas:</span>
+                                <ul>
+                                    <li>Libera a la CPU de tareas de transferencia</li>
+                                    <li>Mayor eficiencia del sistema</li>
+                                    <li>Transferencias más rápidas</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Funcionamiento:</span>
+                                <ol>
+                                    <li>CPU configura DMA (dirección origen, destino, tamaño)</li>
+                                    <li>DMA realiza la transferencia</li>
+                                    <li>DMA interrumpe a CPU cuando termina</li>
+                                </ol>
+                            </li>
+                            <li><span class="highlight">Usos típicos:</span>
+                                <ul>
+                                    <li>Transferencia de bloques de disco</li>
+                                    <li>Reproducción de audio/video</li>
+                                    <li>Comunicación con tarjetas gráficas</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>2.3.5 Canales y procesadores de entrada/salida</h3>
+                        <p>Procesadores especializados en manejar operaciones de E/S:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Canales de E/S:</span>
+                                <ul>
+                                    <li>Procesadores simples dedicados a E/S</li>
+                                    <li>Ejecutan programas especiales de E/S (channel programs)</li>
+                                    <li>Usados en mainframes y sistemas grandes</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Procesadores de E/S:</span>
+                                <ul>
+                                    <li>Más complejos que los canales</li>
+                                    <li>Pueden ejecutar programas más sofisticados</li>
+                                    <li>Ejemplo: Controladores de disco modernos</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>2.4 Buses</h2><br>
+                    
+                    <div>
+                        <h3>2.4.1 Tipos de buses</h3>
+                        <p>Clasificación según su función y tecnología:</p>
+                        
+                        <table>
+                            <tr>
+                                <th>Criterio</th>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Por función</td>
+                                <td>Bus del sistema</td>
+                                <td>Conecta CPU con memoria (ej. FSB - Front Side Bus)</td>
+                            </tr>
+                            <tr>
+                                <td>Bus de expansión</td>
+                                <td>Conecta CPU con periféricos (ej. PCI, USB)</td>
+                            </tr>
+                            <tr>
+                                <td>Bus de backplane</td>
+                                <td>Conecta múltiples placas en sistemas embebidos</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Por tecnología</td>
+                                <td>Bus paralelo</td>
+                                <td>Múltiples líneas para bits simultáneos (ej. PCI)</td>
+                            </tr>
+                            <tr>
+                                <td>Bus serial</td>
+                                <td>Un bit a la vez (ej. USB, SATA, PCI Express)</td>
+                            </tr>
+                        </table>
+                    </div><br>
+                    
+                    <div>
+                        <h3>2.4.2 Estructura de los buses</h3>
+                        <p>Componentes y organización de un sistema de buses:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Líneas del bus:</span>
+                                <ul>
+                                    <li><strong>Datos:</strong> Transportan información</li>
+                                    <li><strong>Direcciones:</strong> Especifican ubicación</li>
+                                    <li><strong>Control:</strong> Señales de temporización y coordinación</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Protocolos:</span>
+                                <ul>
+                                    <li>Sincronización (síncrono/asíncrono)</li>
+                                    <li>Métodos de arbitraje (quién puede usar el bus)</li>
+                                    <li>Tipos de transferencia (lectura, escritura, bloque)</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Topologías:</span>
+                                <ul>
+                                    <li>Punto a punto</li>
+                                    <li>Estrella</li>
+                                    <li>Bus compartido</li>
+                                    <li>Anillo</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><br>
+                    
+                    <div>
+                        <h3>2.4.3 Jerarquía de los buses</h3>
+                        <p>Organización de buses en niveles según su velocidad y función:</p>
+                        
+                        <ol>
+                            <li><strong>Bus del procesador:</strong> Conecta CPU con caché (muy rápido)</li>
+                            <li><strong>Bus de memoria:</strong> Conecta CPU/caché con RAM (rápido)</li>
+                            <li><strong>Bus de sistema (FSB):</strong> Conecta CPU con chipset</li>
+                            <li><strong>Buses de expansión:</strong> PCI, PCI Express, USB (más lentos)</li>
+                            <li><strong>Buses de periféricos:</strong> SATA, SCSI (especializados)</li>
+                        </ol>
+                        
+                        <div class="note">
+                            <p>En sistemas modernos, el Northbridge y Southbridge organizan la jerarquía de buses.</p>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="text-center my-4">
+                    <img src="Imagenes/Jerarquia.png" alt="Diagrama de modelos de multiprocesamiento" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;"> 
+                </div>
+                
+                <div class="container">
+                    <h2>2.5 Interrupciones</h2>
+                    <p>Mecanismo para alertar al procesador de eventos importantes:</p>
+                    
+                    <div>
+                        <h4>Tipos de interrupciones</h4>
+                        
+                        <table>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Origen</th>
+                                <th>Ejemplos</th>
+                            </tr>
+                            <tr>
+                                <td>Hardware</td>
+                                <td>Dispositivos externos</td>
+                                <td>Teclado, disco duro, temporizador</td>
+                            </tr>
+                            <tr>
+                                <td>Software</td>
+                                <td>Instrucciones del programa</td>
+                                <td>INT (x86), SWI (ARM), llamadas al sistema</td>
+                            </tr>
+                            <tr>
+                                <td>Excepciones</td>
+                                <td>Eventos internos del CPU</td>
+                                <td>División por cero, fallo de página, instrucción inválida</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div>
+                        <h4>Manejo de interrupciones</h4>
+                        <p>Proceso que sigue el CPU cuando ocurre una interrupción:</p>
+                        
+                        <ol>
+                            <li>Finaliza la instrucción actual</li>
+                            <li>Guarda el contexto (registros, PC, flags)</li>
+                            <li>Identifica la interrupción (vector de interrupciones)</li>
+                            <li>Ejecuta la rutina de servicio de interrupción (ISR)</li>
+                            <li>Restaura el contexto</li>
+                            <li>Retoma la ejecución del programa interrumpido</li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <h4>Prioridades y máscaras</h4>
+                        <p>Mecanismos para controlar la atención de interrupciones:</p>
+                        
+                        <ul>
+                            <li><span class="highlight">Prioridades:</span> Algunas interrupciones son más urgentes
+                                <ul>
+                                    <li>Ejemplo: Fallo de energía > Disco duro > Teclado</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Máscaras:</span> Permiten deshabilitar interrupciones
+                                <ul>
+                                    <li>Críticas: No pueden ser deshabilitadas</li>
+                                    <li>No críticas: Pueden ser deshabilitadas temporalmente</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </main>
+    
+    <hr class="barra">
+    
+    <article>
+        <div>
+            <h2>Practicas de laboratorio</h2><br>
+            <p class="info-practicas">Armado y desarmado de equipos de computo, con la informacion del funcionamiento de cada componente.</p><br>
+            <center>
+                <a href="Archivos/Reporte U1  Arquitectura De Computadoras.pdf" type="button" target="_blank" class="btn btn-outline-primary" download>Descargar PDF</a>
+            </center>
+        </div>
+    </article>
+
+    <hr class="barra">
+
+    <article>
+        <div>
+            <p class="info-practicas">Especificaciones de los procesadores que se encontraban en las placas madre</p><br>
+            <center>
+                <a href="Archivos/Reporte 2 - U1 Arquitectura De Computadoras.pdf" type="button" target="_blank" class="btn btn-outline-primary" download>Descargar PDF</a>
+            </center>
+        </div>
+    </article>
+
+    <hr class="barra">
+
+    <footer class="color-fondo">
+        <div class="container">
+            <div class="primer-texto">Arquitectura de computadoras</div>
+            <div class="segundo-texto">Creado por Aldrin Esau Ortiz Rodirguez</div>
+                <div class="mt-3">
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                </div>
+            <div class="mt-3">
+                <small>&copy; 2025 Todos los derechos reservados</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
+</html>
